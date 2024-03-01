@@ -19,12 +19,7 @@ queue<pair<int, int>> qu;
 map<pair<int, int>, bool> visited; 
 
 bool check_visited(pair<int, int> pos) { 
-    if (visited[pos] == true) { 
-        return true; 
-    }
-    else { 
-        return false; 
-    }
+    return visited[pos];  
 }
 
 void add_to_graph() { 
@@ -33,7 +28,7 @@ void add_to_graph() {
         addEdge(make_pair(prev_r, prev_c), cell);  
         visited[cell] = true; 
         qu.push(cell);   
-     }
+    }
 }
 
 void search(int val) { 

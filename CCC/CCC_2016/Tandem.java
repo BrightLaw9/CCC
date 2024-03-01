@@ -1,3 +1,4 @@
+package CCC_2016;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -35,7 +36,7 @@ public class Tandem {
             }
         }
         else if (question == 2) { 
-            // Maximum -- binary search pairing approach
+            // Maximum -- binary search pairing approach, the maximums will be from the top down of sorted
             for (int i = 0; i < n; i++) { 
                 total += Math.max(dmojistan[i], pegland[n-1-i]);
             }

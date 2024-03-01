@@ -5,6 +5,8 @@ import java.util.Scanner;
 import java.util.StringTokenizer;
 
 
+// Passed on DMOJ
+
 public class LunchConcert {
 
     static int[][] persons; 
@@ -18,7 +20,8 @@ public class LunchConcert {
         long out = 0; 
 
         for (int[] p : persons) { 
-            int walkTime = Math.abs(pos-p[0])-p[2]; // Concert - person pos - hearing distance
+            long walkTime = Math.abs(pos-p[0])-p[2]; // Concert - person pos - hearing distance
+            // Must be long, might have max hearing distance (p[2]) and be next to concert pos-p[0] = 0; so what would have been - overflowed to pos
 
             if (walkTime > 0) { 
                 out += walkTime * p[1]; // Multiply by walk speed (if larger, then slower)
@@ -64,7 +67,7 @@ public class LunchConcert {
         
         while (low <= high) { 
     
-        // Get how long one will have to walk if in middle 
+        // Get how long each one will have to walk if concert in middle 
             mid = (int) Math.floor((low+high)/2);
             time = getWalkTime(mid); 
             
@@ -76,10 +79,12 @@ public class LunchConcert {
                 break;
             }
 
-            if (time > left) { 
+            if (time > left) {
+                // Best concert loc exists to the left 
                 high = mid-1;  
             }
             else if (time > right) { 
+                // Loc exists to the right
                 low = mid+1; 
             }
         

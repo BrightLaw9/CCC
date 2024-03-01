@@ -1,6 +1,10 @@
+package CCC_2012;
+
 import java.util.Scanner;
 
 public class MouseJourney { 
+
+    // CCC 2012 S5
 
     static int totalPaths = 0; 
 

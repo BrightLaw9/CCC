@@ -1,8 +1,11 @@
+package CCC_2016;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Ragaman {
+
+    // S1
     
     public static void main(String... args) { 
         Scanner in = new Scanner(System.in); 

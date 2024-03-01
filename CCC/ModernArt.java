@@ -11,6 +11,8 @@ import java.io.File;
 
 public class ModernArt { 
 
+    // Passed solution
+
     public static int toInt(String num) { 
         return Integer.parseInt(num); 
     }
@@ -29,7 +31,7 @@ public class ModernArt {
     
 public static void main(String args[]) { 
     
-    System.out.println(new File(".").getAbsolutePath());
+    //System.out.println(new File(".").getAbsolutePath());
     Scanner reader = new Scanner(System.in); //new FileInputStream("Good4and5.java"/*"C:/Users/lawre/Downloads/all_data (1)/all_data/junior_data/j5/junior_data/j5/j5.12.in"*/)); 
     int m = toInt(reader.nextLine());
     int n = toInt(reader.nextLine()); 
@@ -66,12 +68,11 @@ public static void main(String args[]) {
 
         // Check columns and compare to row if it has been not coloured
         // Minus number of all ready coloured cells in column and add uncoloured cells 
-
-        for (int c = 0; c < colouredCols.size(); c++) { 
-            int numColouredInRow = colouredRows.size(); 
-            goldCells -= numColouredInRow;  
-            goldCells += m - numColouredInRow; 
-        }
+ 
+        int numColouredInRow = colouredRows.size(); 
+        goldCells -= numColouredInRow * colouredCols.size();  
+        goldCells += (m - numColouredInRow) * colouredCols.size(); 
+        
         
         System.out.print(goldCells); 
 }
